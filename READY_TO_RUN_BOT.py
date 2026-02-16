@@ -761,7 +761,44 @@ if __name__ == "__main__":
     print("✅ Bot is running...")
     print("="*50)
     
+    # Start a simple web server in background (for Render.com)
+    from flask import Flask
+    import threading
+    
+    app = Flask(__name__)
+    
+    @app.route('/')
+    def home():
+        return "✅ MHT-CET Bot is running!"
+    
+    @app.route('/health')
+    def health():
+        return "OK"
+    
+    def run_flask():
+        port = int(os.environ.get('PORT', 10000))
+        app.run(host='0.0.0.0', port=port)
+    
+    # Start Flask in background thread
+    flask_thread = threading.Thread(target=run_flask)
+    flask_thread.daemon = True
+    flask_thread.start()
+    
+    print("🌐 Web server started on port", os.environ.get('PORT', 10000))
+    
+    # Start bot
     try:
         bot.infinity_polling(timeout=60)
     except Exception as e:
         print(f"Error: {e}")
+```
+
+6. Click **"Commit changes"**
+
+7. Now edit **`requirements.txt`**:
+   - Click edit
+   - Change from `pyTelegramBotAPI==4.14.0`
+   - To:
+```
+   pyTelegramBotAPI==4.14.0
+   Flask==3.0.0
