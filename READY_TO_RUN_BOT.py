@@ -4,16 +4,14 @@
 ║                    🎓 DEVELOPED BY PROOFY GAMERZ 🎓                    ║
 ║                    youtube.com/@proofygamerz                           ║
 ║                                                                        ║
-║  ✅ 500+ Premium Questions  ✅ Complete MHT-CET Coverage              ║
-║  ✅ Progress Tracking       ✅ Performance Analytics                  ║  
-║  ✅ Achievement System      ✅ Production Ready                       ║
+║  ✅ 735 Questions (49 Chapters)  ✅ Production Ready                  ║
+║  ✅ Complete MHT-CET Coverage    ✅ Flask Server Included             ║
 ║                                                                        ║
 ║  Copyright © 2024-2025 Proofy Gamerz. All Rights Reserved.            ║
 ╚════════════════════════════════════════════════════════════════════════╝
 
+🚀 COPY-PASTE READY - DEPLOY IMMEDIATELY!
 For MHT-CET Aspirants - Helping Students Achieve Their Dreams!
-
-🚀 READY TO DEPLOY - COPY & PASTE THIS ENTIRE FILE TO GITHUB!
 """
 
 import telebot
@@ -151,10 +149,27 @@ class DataManager:
     def load_questions(self):
         """Load questions from JSON file"""
         try:
-            with open('mht_cet_comprehensive_questions.json', 'r', encoding='utf-8') as f:
-                return json.load(f)
+            # Load from chapters folder
+            import glob
+            chapters_dir = "chapters"
+            if os.path.exists(chapters_dir):
+                all_questions = {"Physics": {}, "Chemistry": {}, "Mathematics": {}}
+                for json_file in glob.glob(f"{chapters_dir}/*.json"):
+                    try:
+                        with open(json_file, 'r', encoding='utf-8') as f:
+                            chapter_data = json.load(f)
+                            subject = chapter_data.get("subject")
+                            chapter = chapter_data.get("chapter")
+                            if subject and chapter:
+                                all_questions[subject][chapter] = chapter_data["questions"]
+                    except:
+                        pass
+                if any(all_questions.values()):
+                    return all_questions
         except:
-            return self.create_sample_questions()
+            pass
+        # Fallback to built-in questions
+        return self.create_sample_questions()
     
     def create_sample_questions(self):
         """Create comprehensive sample question bank"""
@@ -1082,9 +1097,7 @@ if __name__ == "__main__":
     print("   YouTube: youtube.com/@proofygamerz")
     print("=" * 50)
     print("✅ Bot is running...")
-    print("📊 Data persistence: ENABLED")
-    print("🔄 Infinite practice: ENABLED")
-    print("📈 Analytics: ENABLED")
+    print("📊 Data: ENABLED | 🔄 Practice: ENABLED | 📈 Analytics: ENABLED")
     print("=" * 50)
     
     # Flask Web Server for Render.com
@@ -1095,27 +1108,25 @@ if __name__ == "__main__":
     def home():
         return """<html><head><title>MHT-CET Bot</title></head>
         <body style='font-family:Arial;text-align:center;padding:50px;
-        background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;'>
+        background:linear-gradient(135deg,#667eea,#764ba2);color:white;'>
         <h1>✅ MHT-CET WARRIOR BOT IS RUNNING!</h1>
         <h2>🎓 Developed by Proofy Gamerz</h2>
-        <p>📺 YouTube: youtube.com/@proofygamerz</p>
-        <hr><p><strong>Status: ACTIVE ✅</strong></p>
-        <p>Questions: 500+ Premium | Version: 3.0</p></body></html>"""
+        <p>📺 YouTube: youtube.com/@proofygamerz</p><hr>
+        <p><strong>Status: ACTIVE ✅</strong></p>
+        <p>Questions: 735 Premium | Chapters: 49</p></body></html>"""
     
     @app.route('/health')
     def health():
-        return {"status": "healthy", "bot": "running"}
+        return {"status": "healthy", "bot": "running", "questions": "735"}
     
     def run_flask():
         port = int(os.environ.get('PORT', 10000))
         app.run(host='0.0.0.0', port=port, debug=False)
     
-    # Start Flask in background
     flask_thread = threading.Thread(target=run_flask, daemon=True)
     flask_thread.start()
     print(f"🌐 Web server: Port {os.environ.get('PORT', 10000)} ✓")
     
-    # Start bot
     try:
         bot.infinity_polling(timeout=60, long_polling_timeout=60)
     except Exception as e:
