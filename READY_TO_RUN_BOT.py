@@ -20,6 +20,7 @@ import json
 import random
 import time
 import os
+import glob
 from datetime import datetime, timedelta
 from collections import defaultdict
 import threading
@@ -28,13 +29,12 @@ import threading
 # CONFIGURATION
 # =========================
 
-BOT_TOKEN = "7240890804:AAEwjjDk1gh1hFoJgmNZ9ExZUNKGq6TnI2I"
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "7240890804:AAEwjjDk1gh1hFoJgmNZ9ExZUNKGq6TnI2I")
 DATA_DIR = "bot_data"
 USER_DATA_FILE = os.path.join(DATA_DIR, "users.json")
-QUESTIONS_FILE = os.path.join(DATA_DIR, "questions.json")
 
 # Initialize bot
-bot = telebot.TeleBot(BOT_TOKEN)
+bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
 
 # Create data directory
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -94,8 +94,10 @@ SUBJECTS = {
             "Trigonometric Functions",
             "Pair of Straight Lines",
             "Vectors",
+            "Three Dimensional Geometry",
             "Line and Plane",
             "Linear Programming",
+            "Continuity",
             "Differentiation",
             "Applications of Derivatives",
             "Integration",
@@ -103,7 +105,7 @@ SUBJECTS = {
             "Application of Definite Integration",
             "Differential Equations",
             "Probability Distribution",
-            "Bernoulli & Binomial Distribution"
+            "Bernoulli Trials and Binomial Distribution"
         ]
     }
 }
@@ -115,17 +117,77 @@ DIFFICULTY_LEVELS = {
 }
 
 # =========================
+# LOAD ALL CHAPTER JSON FILES
+# =========================
+
+def load_all_chapters():
+    """
+    Automatically loads all chapter JSON files from the 'chapters/' folder.
+    Each file has structure: { "subject": ..., "chapter": ..., "questions": { "easy": [...], "moderate": [...], "hard": [...] } }
+    Returns a nested dict: questions[subject][chapter] = { "easy": [...], ... }
+    """
+    questions = {}
+    chapters_dir = "chapters"
+
+    if not os.path.exists(chapters_dir):
+        print(f"⚠️  Warning: '{chapters_dir}/' folder not found! Using empty question bank.")
+        return questions
+
+    json_files = sorted(glob.glob(os.path.join(chapters_dir, "*.json")))
+
+    if not json_files:
+        print(f"⚠️  Warning: No JSON files found in '{chapters_dir}/'!")
+        return questions
+
+    loaded = 0
+    errors = 0
+    for filepath in json_files:
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+
+            subject = data.get("subject")
+            chapter = data.get("chapter")
+            chapter_questions = data.get("questions", {})
+
+            if not subject or not chapter:
+                print(f"⚠️  Skipping {filepath} - missing subject or chapter field")
+                errors += 1
+                continue
+
+            if subject not in questions:
+                questions[subject] = {}
+
+            questions[subject][chapter] = chapter_questions
+            loaded += 1
+
+        except Exception as e:
+            print(f"❌ Error loading {filepath}: {e}")
+            errors += 1
+
+    total_q = sum(
+        len(q_list)
+        for subj in questions.values()
+        for chap in subj.values()
+        for q_list in chap.values()
+    )
+
+    print(f"📚 Loaded {loaded} chapters ({total_q} total questions)" + (f" | {errors} errors" if errors else ""))
+    return questions
+
+
+# =========================
 # PERSISTENT STORAGE SYSTEM
 # =========================
 
 class DataManager:
     """Thread-safe data persistence manager"""
-    
+
     def __init__(self):
         self.lock = threading.Lock()
         self.users = self.load_users()
-        self.questions = self.load_questions()
-        
+        self.questions = load_all_chapters()
+
     def load_users(self):
         """Load user data from file"""
         try:
@@ -136,7 +198,7 @@ class DataManager:
         except Exception as e:
             print(f"Error loading users: {e}")
             return {}
-    
+
     def save_users(self):
         """Save user data to file"""
         try:
@@ -145,216 +207,7 @@ class DataManager:
                     json.dump(self.users, f, indent=2, ensure_ascii=False)
         except Exception as e:
             print(f"Error saving users: {e}")
-    
-    def load_questions(self):
-        """Load questions from JSON file"""
-        try:
-            # Load from chapters folder
-            import glob
-            chapters_dir = "chapters"
-            if os.path.exists(chapters_dir):
-                all_questions = {"Physics": {}, "Chemistry": {}, "Mathematics": {}}
-                for json_file in glob.glob(f"{chapters_dir}/*.json"):
-                    try:
-                        with open(json_file, 'r', encoding='utf-8') as f:
-                            chapter_data = json.load(f)
-                            subject = chapter_data.get("subject")
-                            chapter = chapter_data.get("chapter")
-                            if subject and chapter:
-                                all_questions[subject][chapter] = chapter_data["questions"]
-                    except:
-                        pass
-                if any(all_questions.values()):
-                    return all_questions
-        except:
-            pass
-        # Fallback to built-in questions
-        return self.create_sample_questions()
-    
-    def create_sample_questions(self):
-        """Create comprehensive sample question bank"""
-        questions = {}
-        
-        # Physics Questions
-        questions["Physics"] = {
-            "Rotational Dynamics": {
-                "easy": [
-                    {
-                        "q": "What is the SI unit of moment of inertia?",
-                        "opts": ["kg·m²", "kg·m", "kg/m²", "N·m"],
-                        "ans": "kg·m²",
-                        "exp": "Moment of inertia has units of mass × distance², hence kg·m²"
-                    },
-                    {
-                        "q": "The rotational analogue of force is?",
-                        "opts": ["Torque", "Angular momentum", "Moment of inertia", "Angular velocity"],
-                        "ans": "Torque",
-                        "exp": "Just as force causes linear acceleration, torque causes angular acceleration"
-                    }
-                ],
-                "moderate": [
-                    {
-                        "q": "A disc and ring of same mass and radius roll down an incline. Which reaches first?",
-                        "opts": ["Disc", "Ring", "Both together", "Depends on angle"],
-                        "ans": "Disc",
-                        "exp": "Disc has lower moment of inertia (MR²/2 vs MR²), so more energy goes to translation"
-                    }
-                ],
-                "hard": [
-                    {
-                        "q": "If moment of inertia of a solid sphere about diameter is I, what is it about tangent?",
-                        "opts": ["7I/5", "5I/2", "7I/2", "3I"],
-                        "ans": "7I/5",
-                        "exp": "Using parallel axis theorem: I_tangent = I_cm + Md² = (2/5)MR² + MR² = (7/5)MR² = 7I/5"
-                    }
-                ]
-            },
-            "Electrostatics": {
-                "easy": [
-                    {
-                        "q": "SI unit of electric field is?",
-                        "opts": ["N/C", "C/N", "N·C", "C·m"],
-                        "ans": "N/C",
-                        "exp": "Electric field = Force/Charge, so units are Newton/Coulomb"
-                    }
-                ],
-                "moderate": [
-                    {
-                        "q": "Electric potential at center of charged ring is proportional to?",
-                        "opts": ["1/R", "1/R²", "R", "R²"],
-                        "ans": "1/R",
-                        "exp": "V = kQ/R at center, inversely proportional to radius"
-                    }
-                ],
-                "hard": [
-                    {
-                        "q": "Capacitance of spherical conductor of radius R in vacuum?",
-                        "opts": ["4πε₀R", "4πε₀R²", "ε₀R", "πε₀R"],
-                        "ans": "4πε₀R",
-                        "exp": "For isolated sphere: C = 4πε₀R, directly proportional to radius"
-                    }
-                ]
-            }
-        }
-        
-        # Chemistry Questions
-        questions["Chemistry"] = {
-            "Solid State": {
-                "easy": [
-                    {
-                        "q": "What is the coordination number in FCC?",
-                        "opts": ["12", "8", "6", "4"],
-                        "ans": "12",
-                        "exp": "In face-centered cubic, each atom touches 12 neighbors"
-                    }
-                ],
-                "moderate": [
-                    {
-                        "q": "NaCl crystal structure is?",
-                        "opts": ["FCC", "BCC", "Simple cubic", "HCP"],
-                        "ans": "FCC",
-                        "exp": "NaCl has FCC lattice with Cl⁻ at corners and Na⁺ at octahedral voids"
-                    }
-                ],
-                "hard": [
-                    {
-                        "q": "If edge length of NaCl is a, nearest Na⁺-Cl⁻ distance is?",
-                        "opts": ["a/2", "a/√2", "a", "a√2"],
-                        "ans": "a/2",
-                        "exp": "In NaCl, Na⁺ and Cl⁻ are at face centers, distance = edge/2"
-                    }
-                ]
-            },
-            "Chemical Kinetics": {
-                "easy": [
-                    {
-                        "q": "Unit of rate constant for first order reaction?",
-                        "opts": ["s⁻¹", "mol L⁻¹s⁻¹", "L mol⁻¹s⁻¹", "s"],
-                        "ans": "s⁻¹",
-                        "exp": "For first order: rate = k[A], so k has units of time⁻¹"
-                    }
-                ],
-                "moderate": [
-                    {
-                        "q": "Half-life of first order reaction is independent of?",
-                        "opts": ["Initial concentration", "Temperature", "Rate constant", "All of these"],
-                        "ans": "Initial concentration",
-                        "exp": "t₁/₂ = 0.693/k, depends only on rate constant, not concentration"
-                    }
-                ],
-                "hard": [
-                    {
-                        "q": "For reaction A → B, if concentration of A is doubled and rate becomes 4 times, order is?",
-                        "opts": ["2", "1", "0", "3"],
-                        "ans": "2",
-                        "exp": "Rate = k[A]ⁿ. If [A] doubles and rate × 4, then 2ⁿ = 4, so n = 2"
-                    }
-                ]
-            }
-        }
-        
-        # Mathematics Questions
-        questions["Mathematics"] = {
-            "Matrices": {
-                "easy": [
-                    {
-                        "q": "If A is 3×2 and B is 2×4, order of AB is?",
-                        "opts": ["3×4", "2×2", "3×2", "4×3"],
-                        "ans": "3×4",
-                        "exp": "When multiplying matrices, if A is m×n and B is n×p, result is m×p"
-                    }
-                ],
-                "moderate": [
-                    {
-                        "q": "If A is skew-symmetric matrix of order 3, then det(A) is?",
-                        "opts": ["0", "1", "-1", "Cannot determine"],
-                        "ans": "0",
-                        "exp": "For odd order skew-symmetric matrix, determinant is always 0"
-                    }
-                ],
-                "hard": [
-                    {
-                        "q": "If A² = A and A is non-zero, then which is true?",
-                        "opts": ["A is idempotent", "det(A) = 0 or 1", "Eigenvalues are 0 or 1", "All of these"],
-                        "ans": "All of these",
-                        "exp": "A² = A defines idempotent matrix. Taking determinant: (det A)² = det A, so det A = 0 or 1"
-                    }
-                ]
-            },
-            "Differentiation": {
-                "easy": [
-                    {
-                        "q": "Derivative of sin(x) is?",
-                        "opts": ["cos(x)", "-cos(x)", "sin(x)", "-sin(x)"],
-                        "ans": "cos(x)",
-                        "exp": "Standard derivative: d/dx[sin(x)] = cos(x)"
-                    }
-                ],
-                "moderate": [
-                    {
-                        "q": "If y = x^x, then dy/dx at x = 1 is?",
-                        "opts": ["1", "0", "e", "2"],
-                        "ans": "1",
-                        "exp": "dy/dx = x^x(1 + ln x). At x=1: 1¹(1 + ln 1) = 1(1 + 0) = 1"
-                    }
-                ],
-                "hard": [
-                    {
-                        "q": "If f(x) = |x|³, then f''(0) is?",
-                        "opts": ["0", "Does not exist", "1", "3"],
-                        "ans": "0",
-                        "exp": "f'(x) = 3x|x|, f''(x) = 6|x|, so f''(0) = 0"
-                    }
-                ]
-            }
-        }
-        
-        # Save questions
-        with open(QUESTIONS_FILE, 'w', encoding='utf-8') as f:
-            json.dump(questions, f, indent=2, ensure_ascii=False)
-        
-        return questions
-    
+
     def get_user(self, chat_id):
         """Get or create user profile"""
         chat_id = str(chat_id)
@@ -376,37 +229,33 @@ class DataManager:
             }
             self.save_users()
         return self.users[chat_id]
-    
+
     def update_stats(self, chat_id, subject, chapter, difficulty, correct):
         """Update user statistics"""
         user = self.get_user(chat_id)
         stats = user["stats"]
-        
-        # Update totals
+
         stats["total_attempted"] += 1
         if correct:
             stats["total_correct"] += 1
-        
-        # Update subject stats
-        stats["subject_stats"][subject]["attempted"] += 1
-        if correct:
-            stats["subject_stats"][subject]["correct"] += 1
-        
-        # Update chapter stats
+
+        if subject in stats["subject_stats"]:
+            stats["subject_stats"][subject]["attempted"] += 1
+            if correct:
+                stats["subject_stats"][subject]["correct"] += 1
+
         chapter_key = f"{subject}_{chapter}"
         if chapter_key not in stats["chapter_stats"]:
             stats["chapter_stats"][chapter_key] = {"attempted": 0, "correct": 0}
         stats["chapter_stats"][chapter_key]["attempted"] += 1
         if correct:
             stats["chapter_stats"][chapter_key]["correct"] += 1
-        
-        # Update difficulty stats
-        stats["difficulty_stats"][difficulty]["attempted"] += 1
-        if correct:
-            stats["difficulty_stats"][difficulty]["correct"] += 1
-        
-        # Update streak
-        today = datetime.now().date().isoformat()
+
+        if difficulty in stats["difficulty_stats"]:
+            stats["difficulty_stats"][difficulty]["attempted"] += 1
+            if correct:
+                stats["difficulty_stats"][difficulty]["correct"] += 1
+
         last_practice = stats.get("last_practice")
         if last_practice:
             last_date = datetime.fromisoformat(last_practice).date()
@@ -416,23 +265,20 @@ class DataManager:
                 stats["streak_days"] = 1
         else:
             stats["streak_days"] = 1
-        
+
         stats["last_practice"] = datetime.now().isoformat()
-        
         self.save_users()
-    
+
     def start_session(self, chat_id, subject, chapter, difficulty):
         """Start a practice session"""
         user = self.get_user(chat_id)
-        
-        # Get questions for this chapter and difficulty
+
         if subject in self.questions and chapter in self.questions[subject]:
             questions = self.questions[subject][chapter].get(difficulty, [])
             if questions:
-                # Shuffle and prepare infinite loop
                 shuffled = questions.copy()
                 random.shuffle(shuffled)
-                
+
                 user["current_session"] = {
                     "subject": subject,
                     "chapter": chapter,
@@ -446,45 +292,41 @@ class DataManager:
                 self.save_users()
                 return True
         return False
-    
+
     def get_next_question(self, chat_id):
         """Get next random question from current session"""
         user = self.get_user(chat_id)
         session = user.get("current_session")
-        
+
         if not session:
             return None
-        
-        # If no questions available, reshuffle
+
         if not session["available"]:
             session["available"] = list(range(len(session["questions"])))
             random.shuffle(session["available"])
-        
-        # Pick random question
+
         idx = random.choice(session["available"])
         session["available"].remove(idx)
         session["current_index"] = idx
-        
+
         self.save_users()
         return session["questions"][idx]
-    
+
     def check_answer(self, chat_id, answer):
         """Check if answer is correct and update stats"""
         user = self.get_user(chat_id)
         session = user.get("current_session")
-        
+
         if not session or session["current_index"] is None:
             return None
-        
+
         question = session["questions"][session["current_index"]]
         correct = (answer == question["ans"])
-        
-        # Update session stats
+
         session["session_total"] += 1
         if correct:
             session["session_correct"] += 1
-        
-        # Update overall stats
+
         self.update_stats(
             chat_id,
             session["subject"],
@@ -492,18 +334,18 @@ class DataManager:
             session["difficulty"],
             correct
         )
-        
+
         return {
             "correct": correct,
             "answer": question["ans"],
             "explanation": question["exp"]
         }
-    
+
     def end_session(self, chat_id):
         """End current session"""
         user = self.get_user(chat_id)
         session = user.get("current_session")
-        
+
         if session:
             result = {
                 "total": session["session_total"],
@@ -515,6 +357,7 @@ class DataManager:
             return result
         return None
 
+
 # Initialize data manager
 data_manager = DataManager()
 
@@ -525,19 +368,15 @@ data_manager = DataManager()
 user_states = {}
 
 def set_state(chat_id, state, data=None):
-    """Set user state"""
     user_states[chat_id] = {"state": state, "data": data or {}}
 
 def get_state(chat_id):
-    """Get user state"""
     return user_states.get(chat_id, {}).get("state")
 
 def get_state_data(chat_id):
-    """Get user state data"""
     return user_states.get(chat_id, {}).get("data", {})
 
 def clear_state(chat_id):
-    """Clear user state"""
     if chat_id in user_states:
         del user_states[chat_id]
 
@@ -546,7 +385,6 @@ def clear_state(chat_id):
 # =========================
 
 def create_main_menu():
-    """Create main menu keyboard"""
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     markup.add(
         types.KeyboardButton("📘 Physics Practice"),
@@ -559,13 +397,11 @@ def create_main_menu():
     return markup
 
 def create_back_menu():
-    """Create back navigation keyboard"""
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.row("🔙 Back", "🏠 Main Menu")
     return markup
 
 def create_chapter_menu(chapters):
-    """Create chapter selection keyboard"""
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
     for chapter in chapters:
         markup.add(types.KeyboardButton(chapter))
@@ -573,7 +409,6 @@ def create_chapter_menu(chapters):
     return markup
 
 def create_difficulty_menu():
-    """Create difficulty selection keyboard"""
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
     for diff_text, diff_data in DIFFICULTY_LEVELS.items():
         markup.add(types.KeyboardButton(f"{diff_text} - {diff_data['desc']}"))
@@ -581,14 +416,12 @@ def create_difficulty_menu():
     return markup
 
 def create_practice_menu():
-    """Create practice session keyboard"""
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.row("⏭️ Next Question", "❌ End Session")
     markup.row("🏠 Main Menu")
     return markup
 
 def send_animated_message(chat_id, messages, final_text, final_markup=None):
-    """Send animated loading messages"""
     msg = bot.send_message(chat_id, messages[0])
     for text in messages[1:]:
         time.sleep(0.4)
@@ -598,8 +431,8 @@ def send_animated_message(chat_id, messages, final_text, final_markup=None):
             pass
     time.sleep(0.4)
     try:
-        bot.edit_message_text(final_text, chat_id, msg.message_id, 
-                            reply_markup=final_markup, parse_mode="Markdown")
+        bot.edit_message_text(final_text, chat_id, msg.message_id,
+                              reply_markup=final_markup, parse_mode="Markdown")
     except:
         bot.send_message(chat_id, final_text, reply_markup=final_markup, parse_mode="Markdown")
 
@@ -609,11 +442,8 @@ def send_animated_message(chat_id, messages, final_text, final_markup=None):
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    """Handle /start command"""
     try:
-        # Register user
         data_manager.get_user(message.chat.id)
-        
         send_animated_message(
             message.chat.id,
             [
@@ -626,18 +456,18 @@ def start(message):
                 "🎯 *WELCOME TO MHT-CET WARRIOR* 🎯\n\n"
                 "Your Ultimate Competitive Exam Preparation Platform\n\n"
                 "━━━━━━━━━━━━━━━━━━━━\n"
-                "✅ 47 Chapters Coverage\n"
+                "✅ 49 Chapters Coverage\n"
+                "✅ 735 Questions Ready\n"
                 "✅ 3 Difficulty Levels\n"
                 "✅ Infinite Practice Mode\n"
                 "✅ Real-time Analytics\n"
-                "✅ Concept Explanations\n"
                 "━━━━━━━━━━━━━━━━━━━━\n\n"
                 "💡 *TIP:* Practice daily to maintain your streak!\n\n"
                 "⬇️ *First time?* Subscribe to support development ⬇️"
             ),
             final_markup=types.InlineKeyboardMarkup([
-                [types.InlineKeyboardButton("🔔 Subscribe - Proofy Gamerz", 
-                                          url="https://youtube.com/@proofygamerz")],
+                [types.InlineKeyboardButton("🔔 Subscribe - Proofy Gamerz",
+                                            url="https://youtube.com/@proofygamerz")],
                 [types.InlineKeyboardButton("🚀 Start Practicing", callback_data="main_menu")]
             ])
         )
@@ -647,14 +477,12 @@ def start(message):
 
 @bot.callback_query_handler(func=lambda call: call.data == "main_menu")
 def main_menu_callback(call):
-    """Handle main menu callback"""
     try:
         bot.answer_callback_query(call.id)
         user = data_manager.get_user(call.message.chat.id)
-        
         stats = user["stats"]
         accuracy = (stats["total_correct"] / stats["total_attempted"] * 100) if stats["total_attempted"] > 0 else 0
-        
+
         text = (
             f"🎯 *MHT-CET PRACTICE DASHBOARD*\n\n"
             f"📊 *Your Stats:*\n"
@@ -663,10 +491,9 @@ def main_menu_callback(call):
             f"   Streak: {stats['streak_days']} days 🔥\n\n"
             f"Choose your practice mode:"
         )
-        
-        bot.send_message(call.message.chat.id, text, 
-                        reply_markup=create_main_menu(), 
-                        parse_mode="Markdown")
+        bot.send_message(call.message.chat.id, text,
+                         reply_markup=create_main_menu(),
+                         parse_mode="Markdown")
     except Exception as e:
         bot.send_message(call.message.chat.id, "Error loading menu. Please try /start")
         print(f"Menu error: {e}")
@@ -677,30 +504,26 @@ def main_menu_callback(call):
 
 @bot.message_handler(func=lambda m: m.text in ["📘 Physics Practice", "🧪 Chemistry Practice", "📐 Mathematics Practice"])
 def select_subject(message):
-    """Handle subject selection"""
     try:
-        # Extract subject name
         subject_map = {
             "📘 Physics Practice": "Physics",
             "🧪 Chemistry Practice": "Chemistry",
             "📐 Mathematics Practice": "Mathematics"
         }
         subject = subject_map[message.text]
-        
         set_state(message.chat.id, "selecting_chapter", {"subject": subject})
-        
+
         chapters = SUBJECTS[subject]["chapters"]
         emoji = SUBJECTS[subject]["emoji"]
-        
+
         text = (
             f"{emoji} *{subject.upper()} PRACTICE*\n\n"
             f"📚 {len(chapters)} Chapters Available\n\n"
             f"Select a chapter to begin:"
         )
-        
-        bot.send_message(message.chat.id, text, 
-                        reply_markup=create_chapter_menu(chapters),
-                        parse_mode="Markdown")
+        bot.send_message(message.chat.id, text,
+                         reply_markup=create_chapter_menu(chapters),
+                         parse_mode="Markdown")
     except Exception as e:
         bot.send_message(message.chat.id, "Error loading chapters. Please try again.")
         print(f"Subject selection error: {e}")
@@ -711,18 +534,20 @@ def select_subject(message):
 
 @bot.message_handler(func=lambda m: get_state(m.chat.id) == "selecting_chapter")
 def select_chapter(message):
-    """Handle chapter selection"""
     try:
+        if message.text in ["🔙 Back", "🏠 Main Menu"]:
+            go_back(message) if message.text == "🔙 Back" else go_main_menu(message)
+            return
+
         state_data = get_state_data(message.chat.id)
         subject = state_data.get("subject")
         chapter = message.text
-        
-        # Validate chapter
+
         if chapter not in SUBJECTS[subject]["chapters"]:
             return
-        
+
         set_state(message.chat.id, "selecting_difficulty", {"subject": subject, "chapter": chapter})
-        
+
         text = (
             f"📖 *{chapter}*\n\n"
             f"Choose your difficulty level:\n\n"
@@ -730,10 +555,9 @@ def select_chapter(message):
             f"🟡 Moderate - CET exam level questions\n"
             f"🔴 Hard - Rank booster challenges"
         )
-        
         bot.send_message(message.chat.id, text,
-                        reply_markup=create_difficulty_menu(),
-                        parse_mode="Markdown")
+                         reply_markup=create_difficulty_menu(),
+                         parse_mode="Markdown")
     except Exception as e:
         bot.send_message(message.chat.id, "Error. Please select chapter again.")
         print(f"Chapter selection error: {e}")
@@ -744,23 +568,24 @@ def select_chapter(message):
 
 @bot.message_handler(func=lambda m: get_state(m.chat.id) == "selecting_difficulty")
 def select_difficulty(message):
-    """Handle difficulty selection and start practice"""
     try:
+        if message.text in ["🔙 Back", "🏠 Main Menu"]:
+            go_back(message) if message.text == "🔙 Back" else go_main_menu(message)
+            return
+
         state_data = get_state_data(message.chat.id)
         subject = state_data.get("subject")
         chapter = state_data.get("chapter")
-        
-        # Extract difficulty level
+
         difficulty = None
         for diff_text, diff_data in DIFFICULTY_LEVELS.items():
             if message.text.startswith(diff_text):
                 difficulty = diff_data["level"]
                 break
-        
+
         if not difficulty:
             return
-        
-        # Start practice session
+
         send_animated_message(
             message.chat.id,
             [
@@ -770,17 +595,17 @@ def select_difficulty(message):
             ],
             final_text=""
         )
-        
+
         success = data_manager.start_session(message.chat.id, subject, chapter, difficulty)
-        
+
         if success:
             set_state(message.chat.id, "practicing")
             send_next_question(message.chat.id)
         else:
-            bot.send_message(message.chat.id, 
-                           "❌ No questions available for this combination.\n"
-                           "More questions coming soon!",
-                           reply_markup=create_main_menu())
+            bot.send_message(message.chat.id,
+                             "❌ No questions available for this combination.\n"
+                             "More questions coming soon!",
+                             reply_markup=create_main_menu())
             clear_state(message.chat.id)
     except Exception as e:
         bot.send_message(message.chat.id, "Error starting practice. Please try again.")
@@ -791,32 +616,28 @@ def select_difficulty(message):
 # =========================
 
 def send_next_question(chat_id):
-    """Send next question in practice session"""
     try:
         question = data_manager.get_next_question(chat_id)
-        
         if not question:
             bot.send_message(chat_id, "No more questions available!")
             return
-        
-        # Create options keyboard
+
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
         for option in question["opts"]:
             markup.add(types.KeyboardButton(option))
         markup.row("❌ End Session", "🏠 Main Menu")
-        
+
         user = data_manager.get_user(chat_id)
         session = user["current_session"]
-        
+
+        diff_emoji = "🟢" if session['difficulty'] == 'easy' else "🟡" if session['difficulty'] == 'moderate' else "🔴"
         text = (
             f"🎯 *{session['subject']} - {session['chapter']}*\n"
-            f"{'🟢' if session['difficulty'] == 'easy' else '🟡' if session['difficulty'] == 'moderate' else '🔴'} "
-            f"{session['difficulty'].title()} Level\n\n"
+            f"{diff_emoji} {session['difficulty'].title()} Level\n\n"
             f"❓ *Question {session['session_total'] + 1}*\n\n"
             f"{question['q']}\n\n"
             f"Select your answer:"
         )
-        
         bot.send_message(chat_id, text, reply_markup=markup, parse_mode="Markdown")
     except Exception as e:
         bot.send_message(chat_id, "Error loading question. Please try again.")
@@ -824,32 +645,28 @@ def send_next_question(chat_id):
 
 @bot.message_handler(func=lambda m: get_state(m.chat.id) == "practicing")
 def handle_answer(message):
-    """Handle answer submission during practice"""
     try:
-        # Check for special commands
         if message.text == "❌ End Session":
             end_practice_session(message.chat.id)
+            bot.send_message(message.chat.id, "Returning to main menu...", reply_markup=create_main_menu())
+            clear_state(message.chat.id)
             return
         elif message.text == "🏠 Main Menu":
             end_practice_session(message.chat.id)
             bot.send_message(message.chat.id, "Session ended.", reply_markup=create_main_menu())
             clear_state(message.chat.id)
             return
-        
-        # Check answer
+
         result = data_manager.check_answer(message.chat.id, message.text)
-        
         if not result:
             return
-        
-        # Send result with explanation
+
         if result["correct"]:
             text = (
                 "✅ *CORRECT!* 🎉\n\n"
                 f"💡 *Concept:*\n{result['explanation']}\n\n"
                 "Press ⏭️ Next Question"
             )
-            emoji = "🎯"
         else:
             text = (
                 "❌ *INCORRECT*\n\n"
@@ -857,35 +674,28 @@ def handle_answer(message):
                 f"💡 *Concept:*\n{result['explanation']}\n\n"
                 "Press ⏭️ Next Question"
             )
-            emoji = "📚"
-        
+
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         markup.row("⏭️ Next Question")
         markup.row("❌ End Session", "🏠 Main Menu")
-        
+
         bot.send_message(message.chat.id, text, reply_markup=markup, parse_mode="Markdown")
-        
         set_state(message.chat.id, "waiting_next")
-        
+
     except Exception as e:
         bot.send_message(message.chat.id, "Error processing answer. Please try again.")
         print(f"Answer handling error: {e}")
 
 @bot.message_handler(func=lambda m: get_state(m.chat.id) == "waiting_next" and m.text == "⏭️ Next Question")
 def next_question_handler(message):
-    """Handle next question request"""
     set_state(message.chat.id, "practicing")
     send_next_question(message.chat.id)
 
 def end_practice_session(chat_id):
-    """End practice session and show results"""
     try:
         result = data_manager.end_session(chat_id)
-        
         if result:
             accuracy = result["accuracy"]
-            
-            # Performance message
             if accuracy >= 80:
                 perf = "🏆 EXCELLENT!"
             elif accuracy >= 60:
@@ -894,7 +704,7 @@ def end_practice_session(chat_id):
                 perf = "📚 KEEP PRACTICING!"
             else:
                 perf = "💪 DON'T GIVE UP!"
-            
+
             text = (
                 f"{perf}\n\n"
                 f"📊 *SESSION SUMMARY*\n\n"
@@ -904,9 +714,7 @@ def end_practice_session(chat_id):
                 f"{'⭐' * min(5, int(accuracy/20))}\n\n"
                 f"Keep practicing to improve! 🚀"
             )
-            
             bot.send_message(chat_id, text, parse_mode="Markdown")
-        
         clear_state(chat_id)
     except Exception as e:
         print(f"End session error: {e}")
@@ -917,38 +725,32 @@ def end_practice_session(chat_id):
 
 @bot.message_handler(func=lambda m: m.text == "📊 My Performance")
 def show_performance(message):
-    """Display detailed performance statistics"""
     try:
         user = data_manager.get_user(message.chat.id)
         stats = user["stats"]
-        
+
         total = stats["total_attempted"]
         correct = stats["total_correct"]
         accuracy = (correct / total * 100) if total > 0 else 0
-        
-        # Subject breakdown
+
         subject_text = ""
         for subject, subj_stats in stats["subject_stats"].items():
             s_total = subj_stats["attempted"]
             s_correct = subj_stats["correct"]
             s_acc = (s_correct / s_total * 100) if s_total > 0 else 0
-            
             emoji = SUBJECTS[subject]["emoji"]
             subject_text += f"{emoji} {subject}: {s_acc:.0f}% ({s_correct}/{s_total})\n"
-        
-        # Difficulty breakdown
+
         diff_text = ""
         for level, level_stats in stats["difficulty_stats"].items():
             l_total = level_stats["attempted"]
             l_correct = level_stats["correct"]
             l_acc = (l_correct / l_total * 100) if l_total > 0 else 0
-            
             icon = "🟢" if level == "easy" else "🟡" if level == "moderate" else "🔴"
             diff_text += f"{icon} {level.title()}: {l_acc:.0f}% ({l_correct}/{l_total})\n"
-        
-        # Streak info
+
         streak_emoji = "🔥" if stats["streak_days"] > 0 else "💤"
-        
+
         text = (
             f"📊 *YOUR PERFORMANCE DASHBOARD*\n\n"
             f"{'━' * 25}\n"
@@ -964,21 +766,20 @@ def show_performance(message):
             f"{'━' * 25}\n\n"
             f"💡 *Keep practicing daily to improve!*"
         )
-        
-        bot.send_message(message.chat.id, text, 
-                        reply_markup=create_back_menu(),
-                        parse_mode="Markdown")
+
+        bot.send_message(message.chat.id, text,
+                         reply_markup=create_back_menu(),
+                         parse_mode="Markdown")
     except Exception as e:
         bot.send_message(message.chat.id, "Error loading performance data.")
         print(f"Performance error: {e}")
 
 # =========================
-# MIXED CET TEST (BONUS FEATURE)
+# MIXED CET TEST
 # =========================
 
 @bot.message_handler(func=lambda m: m.text == "🎯 Mixed CET Test")
 def mixed_test(message):
-    """Start mixed CET test mode"""
     bot.send_message(
         message.chat.id,
         "🎯 *MIXED CET TEST*\n\n"
@@ -998,7 +799,6 @@ def mixed_test(message):
 
 @bot.message_handler(func=lambda m: m.text == "ℹ️ About")
 def about(message):
-    """Display about information"""
     text = (
         "ℹ️ *ABOUT MHT-CET WARRIOR BOT*\n\n"
         "🎯 *Mission:*\n"
@@ -1007,7 +807,8 @@ def about(message):
         "📚 *Coverage:*\n"
         "• 16 Physics Chapters\n"
         "• 16 Chemistry Chapters\n"
-        "• 15 Mathematics Chapters\n"
+        "• 17 Mathematics Chapters\n"
+        "• 735 Questions Total\n"
         "• 3 Difficulty Levels\n"
         "• Infinite Practice Mode\n\n"
         "✨ *Features:*\n"
@@ -1015,18 +816,16 @@ def about(message):
         "• Advanced analytics dashboard\n"
         "• Persistent progress tracking\n"
         "• Daily streak monitoring\n\n"
-        "{'━' * 25}\n"
+        "━━━━━━━━━━━━━━━━━━━━\n"
         "*Developed by: Proofy Gamerz*\n"
         "For MHT-CET Aspirants\n"
-        "{'━' * 25}\n\n"
-        "🔔 Subscribe: youtube.com/@proofygamerz\n"
-        "💬 Feedback: Use /feedback command\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "🔔 Subscribe: youtube.com/@proofygamerz\n\n"
         "Good luck with your preparation! 🚀"
     )
-    
     bot.send_message(message.chat.id, text,
-                    reply_markup=create_back_menu(),
-                    parse_mode="Markdown")
+                     reply_markup=create_back_menu(),
+                     parse_mode="Markdown")
 
 # =========================
 # NAVIGATION HANDLERS
@@ -1034,9 +833,7 @@ def about(message):
 
 @bot.message_handler(func=lambda m: m.text == "🔙 Back")
 def go_back(message):
-    """Handle back navigation"""
     state = get_state(message.chat.id)
-    
     if state == "selecting_chapter":
         clear_state(message.chat.id)
         bot.send_message(message.chat.id, "Back to main menu", reply_markup=create_main_menu())
@@ -1045,40 +842,36 @@ def go_back(message):
         subject = state_data.get("subject")
         set_state(message.chat.id, "selecting_chapter", {"subject": subject})
         chapters = SUBJECTS[subject]["chapters"]
-        bot.send_message(message.chat.id, f"Select chapter:", 
-                        reply_markup=create_chapter_menu(chapters))
+        bot.send_message(message.chat.id, "Select chapter:",
+                         reply_markup=create_chapter_menu(chapters))
     else:
         clear_state(message.chat.id)
         bot.send_message(message.chat.id, "Main Menu", reply_markup=create_main_menu())
 
 @bot.message_handler(func=lambda m: m.text == "🏠 Main Menu")
 def go_main_menu(message):
-    """Go to main menu"""
     clear_state(message.chat.id)
-    # End any active session
     data_manager.end_session(message.chat.id)
-    
+
     user = data_manager.get_user(message.chat.id)
     stats = user["stats"]
     accuracy = (stats["total_correct"] / stats["total_attempted"] * 100) if stats["total_attempted"] > 0 else 0
-    
+
     text = (
         f"🏠 *MAIN MENU*\n\n"
         f"Quick Stats: {stats['total_attempted']} Q | {accuracy:.1f}% Accuracy\n"
         f"Streak: {stats['streak_days']} days 🔥"
     )
-    
-    bot.send_message(message.chat.id, text, 
-                    reply_markup=create_main_menu(),
-                    parse_mode="Markdown")
+    bot.send_message(message.chat.id, text,
+                     reply_markup=create_main_menu(),
+                     parse_mode="Markdown")
 
 # =========================
-# ERROR HANDLER
+# CATCH-ALL HANDLER
 # =========================
 
 @bot.message_handler(func=lambda m: True)
 def catch_all(message):
-    """Catch all unhandled messages"""
     bot.send_message(
         message.chat.id,
         "❓ I didn't understand that.\n\n"
@@ -1091,44 +884,60 @@ def catch_all(message):
 # =========================
 
 if __name__ == "__main__":
-    print("=" * 50)
+    print("=" * 55)
     print("🚀 MHT-CET WARRIOR BOT - ULTIMATE EDITION")
     print("   Developed by: Proofy Gamerz")
     print("   YouTube: youtube.com/@proofygamerz")
-    print("=" * 50)
+    print("=" * 55)
+
+    # ─── FIX: Remove any existing webhook / duplicate polling ───
+    # This kills any lingering webhook and stops the 409 Conflict error.
+    try:
+        bot.remove_webhook()
+        print("✅ Webhook cleared")
+    except Exception as e:
+        print(f"⚠️  Could not clear webhook: {e}")
+
     print("✅ Bot is running...")
-    print("📊 Data: ENABLED | 🔄 Practice: ENABLED | 📈 Analytics: ENABLED")
-    print("=" * 50)
-    
-    # Flask Web Server for Render.com
+    print("📊 Data persistence: ENABLED")
+    print(f"📚 Question bank: {sum(len(c) for c in data_manager.questions.values())} chapters loaded")
+    print("🔄 Infinite practice: ENABLED")
+    print("📈 Analytics: ENABLED")
+    print("=" * 55)
+
+    # Flask Web Server for Render.com keep-alive
     from flask import Flask
-    app = Flask(__name__)
-    
-    @app.route('/')
+    flask_app = Flask(__name__)
+
+    @flask_app.route('/')
     def home():
         return """<html><head><title>MHT-CET Bot</title></head>
         <body style='font-family:Arial;text-align:center;padding:50px;
-        background:linear-gradient(135deg,#667eea,#764ba2);color:white;'>
+        background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;'>
         <h1>✅ MHT-CET WARRIOR BOT IS RUNNING!</h1>
         <h2>🎓 Developed by Proofy Gamerz</h2>
-        <p>📺 YouTube: youtube.com/@proofygamerz</p><hr>
-        <p><strong>Status: ACTIVE ✅</strong></p>
-        <p>Questions: 735 Premium | Chapters: 49</p></body></html>"""
-    
-    @app.route('/health')
+        <p>📺 YouTube: youtube.com/@proofygamerz</p>
+        <hr><p><strong>Status: ACTIVE ✅</strong></p>
+        <p>735 Questions | 49 Chapters | Version: 4.0</p></body></html>"""
+
+    @flask_app.route('/health')
     def health():
-        return {"status": "healthy", "bot": "running", "questions": "735"}
-    
+        return {"status": "healthy", "bot": "running", "chapters": sum(len(c) for c in data_manager.questions.values())}
+
     def run_flask():
         port = int(os.environ.get('PORT', 10000))
-        app.run(host='0.0.0.0', port=port, debug=False)
-    
+        flask_app.run(host='0.0.0.0', port=port, debug=False, use_reloader=False)
+
     flask_thread = threading.Thread(target=run_flask, daemon=True)
     flask_thread.start()
     print(f"🌐 Web server: Port {os.environ.get('PORT', 10000)} ✓")
-    
-    try:
-        bot.infinity_polling(timeout=60, long_polling_timeout=60)
-    except Exception as e:
-        print(f"❌ Error: {e}")
-        time.sleep(5)
+
+    # ─── Start polling (single instance, no conflicts) ───
+    print("🔄 Starting polling...")
+    while True:
+        try:
+            bot.infinity_polling(timeout=60, long_polling_timeout=60, restart_on_change=False)
+        except Exception as e:
+            print(f"❌ Polling error: {e}")
+            print("🔄 Restarting in 5 seconds...")
+            time.sleep(5)
