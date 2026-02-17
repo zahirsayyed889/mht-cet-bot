@@ -1,0 +1,177 @@
+{
+  "subject": "Chemistry",
+  "chapter": "Introduction to Polymer Chemistry",
+  "questions": {
+    "easy": [
+      {
+        "q": "Introduction to Polymer Chemistry - Easy Question 1",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q1",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Easy Question 2",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q2",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Easy Question 3",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q3",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Easy Question 4",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q4",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Easy Question 5",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q5",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "Introduction to Polymer Chemistry - Moderate Question 1",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q1",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Moderate Question 2",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q2",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Moderate Question 3",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q3",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Moderate Question 4",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q4",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Moderate Question 5",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q5",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Introduction to Polymer Chemistry - Hard Question 1",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q1",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Hard Question 2",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q2",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Hard Question 3",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q3",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Hard Question 4",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q4",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Introduction to Polymer Chemistry - Hard Question 5",
+        "opts": [
+          "Correct answer for Introduction to Polymer Chemistry Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Introduction to Polymer Chemistry Q5",
+        "exp": "Detailed explanation for Introduction to Polymer Chemistry hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}

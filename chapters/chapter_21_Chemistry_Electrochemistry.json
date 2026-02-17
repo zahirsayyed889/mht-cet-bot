@@ -1,0 +1,177 @@
+{
+  "subject": "Chemistry",
+  "chapter": "Electrochemistry",
+  "questions": {
+    "easy": [
+      {
+        "q": "Electrochemistry - Easy Question 1",
+        "opts": [
+          "Correct answer for Electrochemistry Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q1",
+        "exp": "Detailed explanation for Electrochemistry easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Easy Question 2",
+        "opts": [
+          "Correct answer for Electrochemistry Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q2",
+        "exp": "Detailed explanation for Electrochemistry easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Easy Question 3",
+        "opts": [
+          "Correct answer for Electrochemistry Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q3",
+        "exp": "Detailed explanation for Electrochemistry easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Easy Question 4",
+        "opts": [
+          "Correct answer for Electrochemistry Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q4",
+        "exp": "Detailed explanation for Electrochemistry easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Easy Question 5",
+        "opts": [
+          "Correct answer for Electrochemistry Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q5",
+        "exp": "Detailed explanation for Electrochemistry easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "Electrochemistry - Moderate Question 1",
+        "opts": [
+          "Correct answer for Electrochemistry Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q1",
+        "exp": "Detailed explanation for Electrochemistry moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Moderate Question 2",
+        "opts": [
+          "Correct answer for Electrochemistry Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q2",
+        "exp": "Detailed explanation for Electrochemistry moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Moderate Question 3",
+        "opts": [
+          "Correct answer for Electrochemistry Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q3",
+        "exp": "Detailed explanation for Electrochemistry moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Moderate Question 4",
+        "opts": [
+          "Correct answer for Electrochemistry Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q4",
+        "exp": "Detailed explanation for Electrochemistry moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Moderate Question 5",
+        "opts": [
+          "Correct answer for Electrochemistry Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q5",
+        "exp": "Detailed explanation for Electrochemistry moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Electrochemistry - Hard Question 1",
+        "opts": [
+          "Correct answer for Electrochemistry Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q1",
+        "exp": "Detailed explanation for Electrochemistry hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Hard Question 2",
+        "opts": [
+          "Correct answer for Electrochemistry Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q2",
+        "exp": "Detailed explanation for Electrochemistry hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Hard Question 3",
+        "opts": [
+          "Correct answer for Electrochemistry Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q3",
+        "exp": "Detailed explanation for Electrochemistry hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Hard Question 4",
+        "opts": [
+          "Correct answer for Electrochemistry Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q4",
+        "exp": "Detailed explanation for Electrochemistry hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Electrochemistry - Hard Question 5",
+        "opts": [
+          "Correct answer for Electrochemistry Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Electrochemistry Q5",
+        "exp": "Detailed explanation for Electrochemistry hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}

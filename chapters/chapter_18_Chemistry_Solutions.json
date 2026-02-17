@@ -1,0 +1,177 @@
+{
+  "subject": "Chemistry",
+  "chapter": "Solutions",
+  "questions": {
+    "easy": [
+      {
+        "q": "Solutions - Easy Question 1",
+        "opts": [
+          "Correct answer for Solutions Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q1",
+        "exp": "Detailed explanation for Solutions easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Easy Question 2",
+        "opts": [
+          "Correct answer for Solutions Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q2",
+        "exp": "Detailed explanation for Solutions easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Easy Question 3",
+        "opts": [
+          "Correct answer for Solutions Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q3",
+        "exp": "Detailed explanation for Solutions easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Easy Question 4",
+        "opts": [
+          "Correct answer for Solutions Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q4",
+        "exp": "Detailed explanation for Solutions easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Easy Question 5",
+        "opts": [
+          "Correct answer for Solutions Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q5",
+        "exp": "Detailed explanation for Solutions easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "Solutions - Moderate Question 1",
+        "opts": [
+          "Correct answer for Solutions Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q1",
+        "exp": "Detailed explanation for Solutions moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Moderate Question 2",
+        "opts": [
+          "Correct answer for Solutions Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q2",
+        "exp": "Detailed explanation for Solutions moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Moderate Question 3",
+        "opts": [
+          "Correct answer for Solutions Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q3",
+        "exp": "Detailed explanation for Solutions moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Moderate Question 4",
+        "opts": [
+          "Correct answer for Solutions Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q4",
+        "exp": "Detailed explanation for Solutions moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Moderate Question 5",
+        "opts": [
+          "Correct answer for Solutions Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q5",
+        "exp": "Detailed explanation for Solutions moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Solutions - Hard Question 1",
+        "opts": [
+          "Correct answer for Solutions Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q1",
+        "exp": "Detailed explanation for Solutions hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Hard Question 2",
+        "opts": [
+          "Correct answer for Solutions Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q2",
+        "exp": "Detailed explanation for Solutions hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Hard Question 3",
+        "opts": [
+          "Correct answer for Solutions Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q3",
+        "exp": "Detailed explanation for Solutions hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Hard Question 4",
+        "opts": [
+          "Correct answer for Solutions Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q4",
+        "exp": "Detailed explanation for Solutions hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Solutions - Hard Question 5",
+        "opts": [
+          "Correct answer for Solutions Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Solutions Q5",
+        "exp": "Detailed explanation for Solutions hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}

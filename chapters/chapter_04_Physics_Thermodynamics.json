@@ -1,0 +1,177 @@
+{
+  "subject": "Physics",
+  "chapter": "Thermodynamics",
+  "questions": {
+    "easy": [
+      {
+        "q": "Thermodynamics - Easy Question 1",
+        "opts": [
+          "Correct answer for Thermodynamics Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q1",
+        "exp": "Detailed explanation for Thermodynamics easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Easy Question 2",
+        "opts": [
+          "Correct answer for Thermodynamics Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q2",
+        "exp": "Detailed explanation for Thermodynamics easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Easy Question 3",
+        "opts": [
+          "Correct answer for Thermodynamics Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q3",
+        "exp": "Detailed explanation for Thermodynamics easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Easy Question 4",
+        "opts": [
+          "Correct answer for Thermodynamics Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q4",
+        "exp": "Detailed explanation for Thermodynamics easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Easy Question 5",
+        "opts": [
+          "Correct answer for Thermodynamics Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q5",
+        "exp": "Detailed explanation for Thermodynamics easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "Thermodynamics - Moderate Question 1",
+        "opts": [
+          "Correct answer for Thermodynamics Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q1",
+        "exp": "Detailed explanation for Thermodynamics moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Moderate Question 2",
+        "opts": [
+          "Correct answer for Thermodynamics Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q2",
+        "exp": "Detailed explanation for Thermodynamics moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Moderate Question 3",
+        "opts": [
+          "Correct answer for Thermodynamics Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q3",
+        "exp": "Detailed explanation for Thermodynamics moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Moderate Question 4",
+        "opts": [
+          "Correct answer for Thermodynamics Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q4",
+        "exp": "Detailed explanation for Thermodynamics moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Moderate Question 5",
+        "opts": [
+          "Correct answer for Thermodynamics Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q5",
+        "exp": "Detailed explanation for Thermodynamics moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Thermodynamics - Hard Question 1",
+        "opts": [
+          "Correct answer for Thermodynamics Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q1",
+        "exp": "Detailed explanation for Thermodynamics hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Hard Question 2",
+        "opts": [
+          "Correct answer for Thermodynamics Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q2",
+        "exp": "Detailed explanation for Thermodynamics hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Hard Question 3",
+        "opts": [
+          "Correct answer for Thermodynamics Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q3",
+        "exp": "Detailed explanation for Thermodynamics hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Hard Question 4",
+        "opts": [
+          "Correct answer for Thermodynamics Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q4",
+        "exp": "Detailed explanation for Thermodynamics hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Thermodynamics - Hard Question 5",
+        "opts": [
+          "Correct answer for Thermodynamics Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Thermodynamics Q5",
+        "exp": "Detailed explanation for Thermodynamics hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}

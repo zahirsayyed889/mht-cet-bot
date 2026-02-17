@@ -1,0 +1,177 @@
+{
+  "subject": "Physics",
+  "chapter": "AC Circuits",
+  "questions": {
+    "easy": [
+      {
+        "q": "AC Circuits - Easy Question 1",
+        "opts": [
+          "Correct answer for AC Circuits Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q1",
+        "exp": "Detailed explanation for AC Circuits easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Easy Question 2",
+        "opts": [
+          "Correct answer for AC Circuits Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q2",
+        "exp": "Detailed explanation for AC Circuits easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Easy Question 3",
+        "opts": [
+          "Correct answer for AC Circuits Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q3",
+        "exp": "Detailed explanation for AC Circuits easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Easy Question 4",
+        "opts": [
+          "Correct answer for AC Circuits Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q4",
+        "exp": "Detailed explanation for AC Circuits easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Easy Question 5",
+        "opts": [
+          "Correct answer for AC Circuits Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q5",
+        "exp": "Detailed explanation for AC Circuits easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "AC Circuits - Moderate Question 1",
+        "opts": [
+          "Correct answer for AC Circuits Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q1",
+        "exp": "Detailed explanation for AC Circuits moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Moderate Question 2",
+        "opts": [
+          "Correct answer for AC Circuits Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q2",
+        "exp": "Detailed explanation for AC Circuits moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Moderate Question 3",
+        "opts": [
+          "Correct answer for AC Circuits Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q3",
+        "exp": "Detailed explanation for AC Circuits moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Moderate Question 4",
+        "opts": [
+          "Correct answer for AC Circuits Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q4",
+        "exp": "Detailed explanation for AC Circuits moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Moderate Question 5",
+        "opts": [
+          "Correct answer for AC Circuits Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q5",
+        "exp": "Detailed explanation for AC Circuits moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "AC Circuits - Hard Question 1",
+        "opts": [
+          "Correct answer for AC Circuits Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q1",
+        "exp": "Detailed explanation for AC Circuits hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Hard Question 2",
+        "opts": [
+          "Correct answer for AC Circuits Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q2",
+        "exp": "Detailed explanation for AC Circuits hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Hard Question 3",
+        "opts": [
+          "Correct answer for AC Circuits Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q3",
+        "exp": "Detailed explanation for AC Circuits hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Hard Question 4",
+        "opts": [
+          "Correct answer for AC Circuits Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q4",
+        "exp": "Detailed explanation for AC Circuits hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "AC Circuits - Hard Question 5",
+        "opts": [
+          "Correct answer for AC Circuits Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for AC Circuits Q5",
+        "exp": "Detailed explanation for AC Circuits hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}

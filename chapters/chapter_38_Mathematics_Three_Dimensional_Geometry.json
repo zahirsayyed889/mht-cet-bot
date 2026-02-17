@@ -1,0 +1,177 @@
+{
+  "subject": "Mathematics",
+  "chapter": "Three Dimensional Geometry",
+  "questions": {
+    "easy": [
+      {
+        "q": "Three Dimensional Geometry - Easy Question 1",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q1",
+        "exp": "Detailed explanation for Three Dimensional Geometry easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Easy Question 2",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q2",
+        "exp": "Detailed explanation for Three Dimensional Geometry easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Easy Question 3",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q3",
+        "exp": "Detailed explanation for Three Dimensional Geometry easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Easy Question 4",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q4",
+        "exp": "Detailed explanation for Three Dimensional Geometry easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Easy Question 5",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q5",
+        "exp": "Detailed explanation for Three Dimensional Geometry easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "Three Dimensional Geometry - Moderate Question 1",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q1",
+        "exp": "Detailed explanation for Three Dimensional Geometry moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Moderate Question 2",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q2",
+        "exp": "Detailed explanation for Three Dimensional Geometry moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Moderate Question 3",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q3",
+        "exp": "Detailed explanation for Three Dimensional Geometry moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Moderate Question 4",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q4",
+        "exp": "Detailed explanation for Three Dimensional Geometry moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Moderate Question 5",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q5",
+        "exp": "Detailed explanation for Three Dimensional Geometry moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Three Dimensional Geometry - Hard Question 1",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q1",
+        "exp": "Detailed explanation for Three Dimensional Geometry hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Hard Question 2",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q2",
+        "exp": "Detailed explanation for Three Dimensional Geometry hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Hard Question 3",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q3",
+        "exp": "Detailed explanation for Three Dimensional Geometry hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Hard Question 4",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q4",
+        "exp": "Detailed explanation for Three Dimensional Geometry hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Three Dimensional Geometry - Hard Question 5",
+        "opts": [
+          "Correct answer for Three Dimensional Geometry Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Three Dimensional Geometry Q5",
+        "exp": "Detailed explanation for Three Dimensional Geometry hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}

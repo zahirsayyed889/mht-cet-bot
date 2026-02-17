@@ -1,0 +1,177 @@
+{
+  "subject": "Mathematics",
+  "chapter": "Continuity",
+  "questions": {
+    "easy": [
+      {
+        "q": "Continuity - Easy Question 1",
+        "opts": [
+          "Correct answer for Continuity Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q1",
+        "exp": "Detailed explanation for Continuity easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Easy Question 2",
+        "opts": [
+          "Correct answer for Continuity Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q2",
+        "exp": "Detailed explanation for Continuity easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Easy Question 3",
+        "opts": [
+          "Correct answer for Continuity Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q3",
+        "exp": "Detailed explanation for Continuity easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Easy Question 4",
+        "opts": [
+          "Correct answer for Continuity Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q4",
+        "exp": "Detailed explanation for Continuity easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Easy Question 5",
+        "opts": [
+          "Correct answer for Continuity Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q5",
+        "exp": "Detailed explanation for Continuity easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "Continuity - Moderate Question 1",
+        "opts": [
+          "Correct answer for Continuity Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q1",
+        "exp": "Detailed explanation for Continuity moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Moderate Question 2",
+        "opts": [
+          "Correct answer for Continuity Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q2",
+        "exp": "Detailed explanation for Continuity moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Moderate Question 3",
+        "opts": [
+          "Correct answer for Continuity Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q3",
+        "exp": "Detailed explanation for Continuity moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Moderate Question 4",
+        "opts": [
+          "Correct answer for Continuity Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q4",
+        "exp": "Detailed explanation for Continuity moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Moderate Question 5",
+        "opts": [
+          "Correct answer for Continuity Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q5",
+        "exp": "Detailed explanation for Continuity moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Continuity - Hard Question 1",
+        "opts": [
+          "Correct answer for Continuity Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q1",
+        "exp": "Detailed explanation for Continuity hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Hard Question 2",
+        "opts": [
+          "Correct answer for Continuity Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q2",
+        "exp": "Detailed explanation for Continuity hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Hard Question 3",
+        "opts": [
+          "Correct answer for Continuity Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q3",
+        "exp": "Detailed explanation for Continuity hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Hard Question 4",
+        "opts": [
+          "Correct answer for Continuity Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q4",
+        "exp": "Detailed explanation for Continuity hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Continuity - Hard Question 5",
+        "opts": [
+          "Correct answer for Continuity Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Continuity Q5",
+        "exp": "Detailed explanation for Continuity hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}

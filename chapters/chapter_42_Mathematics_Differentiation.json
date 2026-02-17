@@ -1,0 +1,177 @@
+{
+  "subject": "Mathematics",
+  "chapter": "Differentiation",
+  "questions": {
+    "easy": [
+      {
+        "q": "Differentiation - Easy Question 1",
+        "opts": [
+          "Correct answer for Differentiation Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q1",
+        "exp": "Detailed explanation for Differentiation easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Easy Question 2",
+        "opts": [
+          "Correct answer for Differentiation Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q2",
+        "exp": "Detailed explanation for Differentiation easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Easy Question 3",
+        "opts": [
+          "Correct answer for Differentiation Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q3",
+        "exp": "Detailed explanation for Differentiation easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Easy Question 4",
+        "opts": [
+          "Correct answer for Differentiation Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q4",
+        "exp": "Detailed explanation for Differentiation easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Easy Question 5",
+        "opts": [
+          "Correct answer for Differentiation Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q5",
+        "exp": "Detailed explanation for Differentiation easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "Differentiation - Moderate Question 1",
+        "opts": [
+          "Correct answer for Differentiation Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q1",
+        "exp": "Detailed explanation for Differentiation moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Moderate Question 2",
+        "opts": [
+          "Correct answer for Differentiation Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q2",
+        "exp": "Detailed explanation for Differentiation moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Moderate Question 3",
+        "opts": [
+          "Correct answer for Differentiation Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q3",
+        "exp": "Detailed explanation for Differentiation moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Moderate Question 4",
+        "opts": [
+          "Correct answer for Differentiation Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q4",
+        "exp": "Detailed explanation for Differentiation moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Moderate Question 5",
+        "opts": [
+          "Correct answer for Differentiation Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q5",
+        "exp": "Detailed explanation for Differentiation moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Differentiation - Hard Question 1",
+        "opts": [
+          "Correct answer for Differentiation Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q1",
+        "exp": "Detailed explanation for Differentiation hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Hard Question 2",
+        "opts": [
+          "Correct answer for Differentiation Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q2",
+        "exp": "Detailed explanation for Differentiation hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Hard Question 3",
+        "opts": [
+          "Correct answer for Differentiation Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q3",
+        "exp": "Detailed explanation for Differentiation hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Hard Question 4",
+        "opts": [
+          "Correct answer for Differentiation Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q4",
+        "exp": "Detailed explanation for Differentiation hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differentiation - Hard Question 5",
+        "opts": [
+          "Correct answer for Differentiation Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differentiation Q5",
+        "exp": "Detailed explanation for Differentiation hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}

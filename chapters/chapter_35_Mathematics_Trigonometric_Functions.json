@@ -1,0 +1,177 @@
+{
+  "subject": "Mathematics",
+  "chapter": "Trigonometric Functions",
+  "questions": {
+    "easy": [
+      {
+        "q": "Trigonometric Functions - Easy Question 1",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q1",
+        "exp": "Detailed explanation for Trigonometric Functions easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Easy Question 2",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q2",
+        "exp": "Detailed explanation for Trigonometric Functions easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Easy Question 3",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q3",
+        "exp": "Detailed explanation for Trigonometric Functions easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Easy Question 4",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q4",
+        "exp": "Detailed explanation for Trigonometric Functions easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Easy Question 5",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q5",
+        "exp": "Detailed explanation for Trigonometric Functions easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "Trigonometric Functions - Moderate Question 1",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q1",
+        "exp": "Detailed explanation for Trigonometric Functions moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Moderate Question 2",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q2",
+        "exp": "Detailed explanation for Trigonometric Functions moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Moderate Question 3",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q3",
+        "exp": "Detailed explanation for Trigonometric Functions moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Moderate Question 4",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q4",
+        "exp": "Detailed explanation for Trigonometric Functions moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Moderate Question 5",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q5",
+        "exp": "Detailed explanation for Trigonometric Functions moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Trigonometric Functions - Hard Question 1",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q1",
+        "exp": "Detailed explanation for Trigonometric Functions hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Hard Question 2",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q2",
+        "exp": "Detailed explanation for Trigonometric Functions hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Hard Question 3",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q3",
+        "exp": "Detailed explanation for Trigonometric Functions hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Hard Question 4",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q4",
+        "exp": "Detailed explanation for Trigonometric Functions hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Trigonometric Functions - Hard Question 5",
+        "opts": [
+          "Correct answer for Trigonometric Functions Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Trigonometric Functions Q5",
+        "exp": "Detailed explanation for Trigonometric Functions hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}

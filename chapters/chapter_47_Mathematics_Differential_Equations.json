@@ -1,0 +1,177 @@
+{
+  "subject": "Mathematics",
+  "chapter": "Differential Equations",
+  "questions": {
+    "easy": [
+      {
+        "q": "Differential Equations - Easy Question 1",
+        "opts": [
+          "Correct answer for Differential Equations Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q1",
+        "exp": "Detailed explanation for Differential Equations easy question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Easy Question 2",
+        "opts": [
+          "Correct answer for Differential Equations Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q2",
+        "exp": "Detailed explanation for Differential Equations easy question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Easy Question 3",
+        "opts": [
+          "Correct answer for Differential Equations Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q3",
+        "exp": "Detailed explanation for Differential Equations easy question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Easy Question 4",
+        "opts": [
+          "Correct answer for Differential Equations Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q4",
+        "exp": "Detailed explanation for Differential Equations easy question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Easy Question 5",
+        "opts": [
+          "Correct answer for Differential Equations Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q5",
+        "exp": "Detailed explanation for Differential Equations easy question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "moderate": [
+      {
+        "q": "Differential Equations - Moderate Question 1",
+        "opts": [
+          "Correct answer for Differential Equations Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q1",
+        "exp": "Detailed explanation for Differential Equations moderate question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Moderate Question 2",
+        "opts": [
+          "Correct answer for Differential Equations Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q2",
+        "exp": "Detailed explanation for Differential Equations moderate question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Moderate Question 3",
+        "opts": [
+          "Correct answer for Differential Equations Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q3",
+        "exp": "Detailed explanation for Differential Equations moderate question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Moderate Question 4",
+        "opts": [
+          "Correct answer for Differential Equations Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q4",
+        "exp": "Detailed explanation for Differential Equations moderate question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Moderate Question 5",
+        "opts": [
+          "Correct answer for Differential Equations Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q5",
+        "exp": "Detailed explanation for Differential Equations moderate question 5. This covers the key concept and solution approach."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Differential Equations - Hard Question 1",
+        "opts": [
+          "Correct answer for Differential Equations Q1",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q1",
+        "exp": "Detailed explanation for Differential Equations hard question 1. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Hard Question 2",
+        "opts": [
+          "Correct answer for Differential Equations Q2",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q2",
+        "exp": "Detailed explanation for Differential Equations hard question 2. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Hard Question 3",
+        "opts": [
+          "Correct answer for Differential Equations Q3",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q3",
+        "exp": "Detailed explanation for Differential Equations hard question 3. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Hard Question 4",
+        "opts": [
+          "Correct answer for Differential Equations Q4",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q4",
+        "exp": "Detailed explanation for Differential Equations hard question 4. This covers the key concept and solution approach."
+      },
+      {
+        "q": "Differential Equations - Hard Question 5",
+        "opts": [
+          "Correct answer for Differential Equations Q5",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "ans": "Correct answer for Differential Equations Q5",
+        "exp": "Detailed explanation for Differential Equations hard question 5. This covers the key concept and solution approach."
+      }
+    ]
+  }
+}
